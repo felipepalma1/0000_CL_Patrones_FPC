@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+require_relative "../lib/Cliente.rb"
+require_relative "../lib/Fabrica"
+
+include Fabrica
+
+cliente = Cliente.new(Fabrica::CreadorConcretoUno.new)
+cliente.exe
+puts "\n\n"
+
+cliente = Cliente.new(Fabrica::CreadorConcretoDos.new)
+cliente.exe
+puts "\n\n"
+
+
+#    puts('App: Lanzamiento con CreadorConcretoUno')
+#    cliente(Fabrica::CreadorConcretoUno.new)
+#    puts "\n\n"
+#    puts('App: Lanzamiento con CreadorConcretoDos')
+#    cliente(Fabrica::CreadorConcretoDos.new)
